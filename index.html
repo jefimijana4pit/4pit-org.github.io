@@ -1,15 +1,15 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="sr">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>4PIT – Innovative Solutions</title>
-<meta name="description" content="Welcome to 4PIT – cutting-edge solutions for your business.">
+<title>4PIT – Inovativna Rešenja</title>
+<meta name="description" content="Dobrodošli u 4PIT – jednostavna landing stranica.">
 <style>
     /* Reset & base */
     * { margin:0; padding:0; box-sizing:border-box; }
-    body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; line-height:1.6; background:#f7f8fa; color:#333; }
-    a { text-decoration:none; }
+    body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; line-height:1.6; background:#f7f8fa; color:#333; min-height:100vh; display:flex; flex-direction:column; }
+    a { text-decoration:none; color: inherit; }
 
     /* Container */
     .container { max-width:1200px; margin:0 auto; padding:0 20px; }
@@ -20,14 +20,23 @@
     header p { font-size:1.1em; }
 
     /* Hero Section */
-    .hero { display:flex; flex-direction:column; justify-content:center; align-items:center; text-align:center; padding:100px 20px; background:#e0f0ff; }
+    .hero { flex:1; display:flex; flex-direction:column; justify-content:center; align-items:center; text-align:center; padding:80px 20px; background:#e0f0ff; }
     .hero h2 { font-size:2em; margin-bottom:20px; }
-    .hero p { font-size:1.2em; margin-bottom:30px; max-width:600px; }
-    .hero a.button { padding:15px 30px; background:#0070f3; color:#fff; border-radius:8px; transition:0.3s; }
-    .hero a.button:hover { background:#005ac1; }
+    .hero p { font-size:1.2em; max-width:600px; }
+
+    /* Resenja Section */
+    .resenja { padding:60px 20px; text-align:center; }
+    .resenja h2 { font-size:1.8em; margin-bottom:40px; }
+    .resenja-grid { display:flex; flex-wrap:wrap; justify-content:center; gap:30px; }
+    .resenje-card { background:#fff; padding:30px 20px; border-radius:12px; width:280px; box-shadow:0 4px 12px rgba(0,0,0,0.1); transition:transform 0.3s; }
+    .resenje-card:hover { transform: translateY(-5px); }
+    .resenje-card h3 { margin-bottom:15px; color:#0070f3; }
+    .resenje-card p { color:#666; font-size:1em; }
+
+    .coming-soon { display:inline-block; margin-top:10px; padding:5px 10px; font-size:0.9em; color:#fff; background:#ff6b6b; border-radius:6px; }
 
     /* Footer */
-    footer { background:#333; color:#fff; text-align:center; padding:30px 20px; margin-top:50px; }
+    footer { background:#333; color:#fff; text-align:center; padding:30px 20px; margin-top:auto; }
     footer p { margin-bottom:10px; }
     footer a.social { color:#fff; margin:0 10px; font-size:1.2em; transition:0.3s; }
     footer a.social:hover { color:#0070f3; }
@@ -35,6 +44,8 @@
     @media (max-width:768px) {
         .hero h2 { font-size:1.6em; }
         .hero p { font-size:1em; }
+        .resenja-grid { flex-direction:column; align-items:center; }
+        .resenje-card { width:90%; }
     }
 </style>
 </head>
@@ -43,25 +54,45 @@
 <header>
     <div class="container">
         <h1>4PIT</h1>
-        <p>Innovative Solutions for Modern Businesses</p>
+        <p>Inovativna rešenja za moderne biznise</p>
     </div>
 </header>
 
 <section class="hero">
     <div class="container">
-        <h2>Welcome to 4PIT</h2>
-        <p>We provide cutting-edge solutions that help your business thrive in the digital era. Explore our services and get started today.</p>
-        <a href="#contact" class="button">Get Started</a>
+        <h2>Dobrodošli u 4PIT</h2>
+        <p>Pružamo vrhunska rešenja koja pomažu vašem biznisu da raste u digitalnom dobu. Istražite naše usluge i saznajte više.</p>
+    </div>
+</section>
+
+<section class="resenja">
+    <div class="container">
+        <h2>Naša rešenja</h2>
+        <div class="resenja-grid">
+            <div class="resenje-card">
+                <h3>Elektronska Arhiva</h3>
+                <p>Digitalizujte i organizujte sve vaše dokumente na jednom mestu, sigurno i brzo.</p>
+            </div>
+            <div class="resenje-card">
+                <h3>Finansijsko knjigovodstvo</h3>
+                <p>Pojednostavite finansijsko praćenje, obračune i izveštaje uz maksimalnu preciznost.</p>
+            </div>
+            <div class="resenje-card">
+                <h3>Robno</h3>
+                <p>Upravljanje robom i skladištem u razvoju.</p>
+                <span class="coming-soon">Coming Soon</span>
+            </div>
+        </div>
     </div>
 </section>
 
 <footer>
     <div class="container">
-        <p>Connect with us:</p>
+        <p>Povežite se sa nama:</p>
         <a href="https://twitter.com/4pit" class="social" target="_blank">Twitter</a>
         <a href="https://linkedin.com/company/4pit" class="social" target="_blank">LinkedIn</a>
         <a href="mailto:info@4pit.rs" class="social">Email</a>
-        <p>&copy; 2025 4PIT. All rights reserved.</p>
+        <p>&copy; 2025 4PIT. Sva prava zadržana.</p>
     </div>
 </footer>
 
