@@ -1,93 +1,245 @@
 <!DOCTYPE html>
 <html lang="sr">
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>4PIT</title>
-<link rel="icon" type="image/png" href="logo.png">
-<meta name="description" content="Dobrodošli u 4PIT – jednostavna landing stranica.">
-<style>
-    /* Reset & base */
-    * { margin:0; padding:0; box-sizing:border-box; }
-    body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; line-height:1.6; background:#121212; color:#e0e0e0; min-height:100vh; display:flex; flex-direction:column; }
-    a { text-decoration:none; color: inherit; }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>4PIT – Elektronska Arhiva, Finansijsko knjigovodstvo, Robno</title>
 
-    /* Container */
-    .container { max-width:1200px; margin:0 auto; padding:0 20px; }
+    <!-- SEO Meta Tags -->
+    <meta name="description"
+        content="4PIT – Elektronska Arhiva, Finansijsko knjigovodstvo i Robno upravljanje za moderne biznise.">
+    <meta name="keywords"
+        content="4PIT, elektronska arhiva, finansijsko knjigovodstvo, robno, poslovna rešenja, digitalni biznis">
+    <meta name="author" content="4PIT">
 
-    /* Header */
-    header { background:#1f1f1f; color:#ffffff; padding:10px 0; text-align:center; }
-    header img { height:60px; }
-    header p { font-size:1.1em; color:#bbbbbb; }
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="favicon.png">
 
-    /* Hero Section */
-    .hero { flex:1; display:flex; flex-direction:column; justify-content:center; align-items:center; text-align:center; padding:20px 20px; background:#181818; }
-    .hero p { font-size:1.2em; max-width:600px; color:#cccccc; }
+    <!-- Open Graph / Social Media -->
+    <meta property="og:title" content="4PIT – Inovativna poslovna rešenja">
+    <meta property="og:description"
+        content="Elektronska Arhiva, Finansijsko knjigovodstvo i Robno upravljanje za moderne biznise.">
+    <meta property="og:image" content="logo.png">
+    <meta property="og:url" content="https://www.4pit.rs/">
+    <meta property="og:type" content="website">
 
-    /* Resenja Section */
-    .resenja { padding:60px 20px; text-align:center; }
-    .resenja h2 { font-size:1.8em; margin-bottom:40px; color:#ffffff; }
-    .resenja-grid { display:flex; flex-wrap:wrap; justify-content:center; gap:30px; }
-    .resenje-card { background:#1f1f1f; padding:30px 20px; border-radius:12px; width:280px; box-shadow:0 4px 12px rgba(0,0,0,0.7); transition:transform 0.3s; }
-    .resenje-card:hover { transform: translateY(-5px); }
-    .resenje-card h3 { margin-bottom:15px; color:#ffff; }
-    .resenje-card p { color:#bbbbbb; font-size:1em; }
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="4PIT – Inovativna poslovna rešenja">
+    <meta name="twitter:description"
+        content="Elektronska Arhiva, Finansijsko knjigovodstvo i Robno upravljanje za moderne biznise.">
+    <meta name="twitter:image" content="logo.png">
 
-    .coming-soon { display:inline-block; margin-top:10px; padding:5px 10px; font-size:0.9em; color:#fff; background:#f97316; border-radius:6px; }
+    <meta name="description"
+        content="4PIT – Elektronska Arhiva, Finansijsko knjigovodstvo i Robno-materijalno knjigovotstvo.">
+    <meta name="keywords"
+        content="4PIT, elektronska arhiva, finansijsko knjigovodstvo, robno, poslovna rešenja, digitalni biznis, komercijalisti">
+    <meta name="author" content="4PIT">
+    <title>4PIT</title>
+    <link rel="icon" type="image/png" href="logo.png">
+    <meta name="description" content="Dobrodošli u 4PIT – jednostavna landing stranica.">
+    <style>
+        /* Reset & base */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-    /* Footer */
-    footer { background:#1f1f1f; color:#cccccc; text-align:center; padding:30px 20px; margin-top:auto; }
-    footer p { margin-bottom:10px; }
-    footer a.social { color:#cccccc; margin:0 10px; font-size:1.2em; transition:0.3s; }
-    footer a.social:hover { color:#90caf9; }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            background: #121212;
+            color: #e0e0e0;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
 
-    @media (max-width:768px) {
-        .hero p { font-size:1em; }
-        .resenja-grid { flex-direction:column; align-items:center; }
-        .resenje-card { width:90%; }
-    }
-</style>
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        /* Container */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        header {
+            background: #1f1f1f;
+            color: #ffffff;
+            padding: 10px 0;
+            text-align: center;
+        }
+
+        header img {
+            height: 60px;
+        }
+
+        header p {
+            font-size: 1.1em;
+            color: #bbbbbb;
+        }
+
+        /* Hero Section */
+        .hero {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 20px 20px;
+            background: #181818;
+        }
+
+        .hero p {
+            font-size: 1.2em;
+            max-width: 600px;
+            color: #cccccc;
+        }
+
+        /* Resenja Section */
+        .resenja {
+            padding: 60px 20px;
+            text-align: center;
+        }
+
+        .resenja h2 {
+            font-size: 1.8em;
+            margin-bottom: 40px;
+            color: #ffffff;
+        }
+
+        .resenja-grid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 30px;
+        }
+
+        .resenje-card {
+            background: #1f1f1f;
+            padding: 30px 20px;
+            border-radius: 12px;
+            width: 280px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.7);
+            transition: transform 0.3s;
+        }
+
+        .resenje-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .resenje-card h3 {
+            margin-bottom: 15px;
+            color: #ffff;
+        }
+
+        .resenje-card p {
+            color: #bbbbbb;
+            font-size: 1em;
+        }
+
+        .coming-soon {
+            display: inline-block;
+            margin-top: 10px;
+            padding: 5px 10px;
+            font-size: 0.9em;
+            color: #fff;
+            background: #f97316;
+            border-radius: 6px;
+        }
+
+        /* Footer */
+        footer {
+            background: #1f1f1f;
+            color: #cccccc;
+            text-align: center;
+            padding: 30px 20px;
+            margin-top: auto;
+        }
+
+        footer p {
+            margin-bottom: 10px;
+        }
+
+        footer a.social {
+            color: #cccccc;
+            margin: 0 10px;
+            font-size: 1.2em;
+            transition: 0.3s;
+        }
+
+        footer a.social:hover {
+            color: #90caf9;
+        }
+
+        @media (max-width:768px) {
+            .hero p {
+                font-size: 1em;
+            }
+
+            .resenja-grid {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .resenje-card {
+                width: 90%;
+            }
+        }
+    </style>
 </head>
+
 <body>
 
-<section class="hero">
-    <div class="container">
-          <img src="logo.png" alt="4PIT Logo" style="height:120px;">
-        <h2>Dobrodošli u 4PIT</h2>
-        <p>Pružamo rešenja koja pomažu vašem biznisu da raste u digitalnom dobu. Istražite naše usluge i saznajte više.</p>
-    </div>
-</section>
-
-<section class="resenja">
-    <div class="container">
-        <h2>Naša rešenja</h2>
-        <div class="resenja-grid">
-            <div class="resenje-card">
-                <h3>Elektronska Arhiva</h3>
-                <p>Digitalizujte i organizujte sve vaše dokumente na jednom mestu, sigurno i brzo.</p>
-            </div>
-            <div class="resenje-card">
-                <h3>Finansijsko knjigovodstvo</h3>
-                <p>Pojednostavite finansijsko praćenje, obračune i izveštaje uz maksimalnu preciznost.</p>
-            </div>
-            <div class="resenje-card">
-                <h3>Robno</h3>
-                <p>Upravljanje robom i skladištem u razvoju.</p>
-                <span class="coming-soon">Uskoro dostupno</span>
+    <section class="hero">
+        <div class="container">
+            <img src="logo.png" alt="4PIT Logo" style="height:120px;"
+                alt="4PIT – Elektronska Arhiva i Finansijsko knjigovodstvo">
+            <h2>Dobrodošli u 4PIT</h2>
+            <p>Pružamo rešenja koja pomažu vašem biznisu da raste u digitalnom dobu. Istražite naše usluge i saznajte
+                više.</p>
         </div>
-    </div>
-</section>
+    </section>
 
-<footer>
-    <div class="container">
-        <p>Kontakt</p>
-        <p>Email jefimijana@gmail.com</p>
-        <p>Telefon +381/659517319</p>
-        <p><a href="https://linkedin.com/company/4pit" target="_blank">LinkedIn</a></p>
-        <p></p>
-        <p>&copy; 2025 4PIT</p>
-    </div>
-</footer>
+    <section class="resenja">
+        <div class="container">
+            <h2>Naša rešenja</h2>
+            <div class="resenja-grid">
+                <div class="resenje-card">
+                    <h3>Elektronska Arhiva</h3>
+                    <p>Digitalizujte i organizujte sve vaše dokumente na jednom mestu, sigurno i brzo.</p>
+                </div>
+                <div class="resenje-card">
+                    <h3>Finansijsko knjigovodstvo</h3>
+                    <p>Pojednostavite finansijsko praćenje, obračune i izveštaje uz maksimalnu preciznost.</p>
+                </div>
+                <div class="resenje-card">
+                    <h3>Robno</h3>
+                    <p>Upravljanje robom i skladištem u razvoju.</p>
+                    <span class="coming-soon">Uskoro dostupno</span>
+                </div>
+            </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>Kontakt</p>
+            <p>Email jefimijana@gmail.com</p>
+            <p>Telefon +381/659517319</p>
+            <p><a href="https://linkedin.com/company/4pit" target="_blank">LinkedIn</a></p>
+            <p></p>
+            <p>&copy; 2025 4PIT</p>
+        </div>
+    </footer>
 
 </body>
+
 </html>
