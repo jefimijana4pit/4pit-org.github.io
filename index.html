@@ -84,7 +84,10 @@
 
         /* Rešenja Section */
         .resenja {
-            padding: 60px 20px;
+            padding-top: 60px;
+            /* decrease from previous 60px */
+            padding-bottom: 120px;
+            /* keep bottom if you want */
             text-align: center;
         }
 
@@ -105,7 +108,7 @@
             background: #ffffff;
             padding: 30px 20px;
             border-radius: 12px;
-            width: 300px;
+            width: 340px;
             box-shadow: 0 6px 15px rgba(0, 0, 0, 0.08);
             transition: transform 0.3s, box-shadow 0.3s;
             text-align: center;
@@ -118,8 +121,18 @@
         }
 
         .resenje-card h3 {
+            font-size: 1.2em;
             margin-bottom: 15px;
-            font-size: 1.4em;
+            white-space: nowrap;
+            /* single line */
+            overflow: hidden;
+            /* hide overflow */
+            text-overflow: ellipsis;
+            /* show … if title too long */
+            width: 100%;
+            /* fit card width */
+            box-sizing: border-box;
+            /* padding counted inside width */
         }
 
         .resenje-card p {
@@ -133,14 +146,14 @@
             padding: 5px 10px;
             font-size: 0.85em;
             color: #fff;
-            background: #888;
+            background: #F58302;
             border-radius: 6px;
         }
 
         /* Footer */
         footer {
             background: #ffffff;
-            color: #666;
+            color: #000;
             text-align: center;
             padding: 30px 20px;
             margin-top: auto;
@@ -183,7 +196,7 @@
         <div class="container">
             <img src="logo.png" alt="4PIT Logo">
             <h1>4PIT</h1>
-            <p>Pružamo rešenja koja pomažu održavanjem vašeg poslovanja</p>
+            <p>Nudimo gotova softverska rešenja za jednostavan način poslovanja</p>
         </div>
     </header>
 
@@ -193,38 +206,33 @@
             <div class="resenja-grid">
                 <div class="resenje-card">
                     <h3>Elektronska Arhiva</h3>
-                    <p>Digitalizujte i organizujte sve vaše dokumente na jednom mestu, sigurno i brzo.</p>
+                    <p>Digitalizujte i organizujte sve vaše dokumente na jednom mestu, sigurno i brzo</p>
                 </div>
                 <div class="resenje-card">
                     <h3>Finansijsko knjigovodstvo</h3>
-                    <p>Pojednostavite finansijsko praćenje, obračune i izveštaje uz maksimalnu preciznost.</p>
+                    <p>Pojednostavite finansijsko praćenje, obračune i izveštaje uz maksimalnu preciznost</p>
                 </div>
                 <div class="resenje-card">
-                    <h3>Robno</h3>
-                    <p>Upravljanje robom i skladištem u razvoju.</p>
+                    <h3>Robno knjigovodstvo</h3>
+                    <p>Upravljanje robom i skladištem u razvoju</p>
                     <span class="coming-soon">Uskoro dostupno</span>
                 </div>
             </div>
         </div>
     </section>
-
-    <section class="resenja">
-        <div class="container">
-            <p>
-                Otvoreni smo za saradnju i projekte, uključujući <strong>Android</strong>, <strong>KMP</strong>,
-                kao i <strong>kreiranje API-ja</strong>. Ukoliko vam je potreban tim za implementaciju, kontaktirajte nas.
-            </p>
-        </div>
-    </section>
-
     <footer>
         <div class="container">
-            <h3>Kontakt</h3>
+            <h2>Kontakt</h2>
             <br>
-            <p>Email jefimijana@gmail.com</p>
-            <p>Telefon +381 65/9517-319</p>
-            <p><a href="https://linkedin.com/company/4pit" class="social" target="_blank">LinkedIn</a></p>
+            <p><strong>Email:</strong> jefimijana@gmail.com</p>
+            <p><strong>Telefon:</strong> +381 65/9517-319</p>
             <br>
+
+            <br>
+            <div class="container">
+                <p>Ukoliko tražite tim za realizaciju neke ideje, <strong>otvoreni smo za saradnju i projekte</strong>
+                </p>
+            </div>
             <br>
             <p>&copy; 2025 4PIT</p>
         </div>
