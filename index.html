@@ -4,241 +4,232 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="assets/img/favicon.png">
+
     <title>4PIT</title>
-    <link rel="icon" type="image/png" href="logo.png">
+    <link href="tooplate-minimal-white-style.css" rel="stylesheet">
 
-    <!-- SEO -->
-    <meta name="description"
-        content="4PIT – Elektronska Arhiva, Finansijsko knjigovodstvo i Robno upravljanje za moderne biznise.">
-    <meta name="keywords"
-        content="4PIT, elektronska arhiva, finansijsko knjigovodstvo, robno, poslovna rešenja, digitalni biznis">
+    <!--
 
-    <!-- Favicon -->
-    <link rel="icon" type="image/png" href="favicon.png">
+Tooplate 2141 Minimal White
 
-    <!-- Open Graph -->
-    <meta property="og:title" content="4PIT – Inovativna poslovna rešenja">
-    <meta property="og:description" content="Elektronska Arhiva, Finansijsko knjigovodstvo i Robno upravljanje.">
-    <meta property="og:image" content="logo.png">
-    <meta property="og:url" content="https://www.4pit.rs/">
-    <meta property="og:type" content="website">
+https://www.tooplate.com/view/2141-minimal-white
 
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+Free HTML CSS Template
 
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            line-height: 1.6;
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-            background: #f5f5f5;
-            color: #333;
-        }
-
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-
-        /* Header */
-        header {
-            background: #ffffff;
-            padding: 15px 0;
-            text-align: center;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
-        }
-
-        header img {
-            height: 80px;
-        }
-
-        header p {
-            margin-top: 5px;
-            color: #666;
-            font-weight: 500;
-        }
-
-        /* Hero Section */
-        .hero {
-            flex: 1;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            padding: 0px 0px;
-            background: #ffffff;
-            border-radius: 12px;
-            margin: 0px 0;
-        }
-
-        .hero p {
-            font-size: 1.2em;
-            max-width: 700px;
-            color: #333;
-        }
-
-        /* Rešenja Section */
-        .resenja {
-            padding-top: 60px;
-            /* decrease from previous 60px */
-            padding-bottom: 120px;
-            /* keep bottom if you want */
-            text-align: center;
-        }
-
-        .resenja h2 {
-            font-size: 2em;
-            margin-bottom: 50px;
-            color: #222;
-        }
-
-        .resenja-grid {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 30px;
-        }
-
-        .resenje-card {
-            background: #ffffff;
-            padding: 30px 20px;
-            border-radius: 12px;
-            width: 340px;
-            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.08);
-            transition: transform 0.3s, box-shadow 0.3s;
-            text-align: center;
-            color: #222;
-        }
-
-        .resenje-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 12px 25px rgba(0, 0, 0, 0.12);
-        }
-
-        .resenje-card h3 {
-            font-size: 1.2em;
-            margin-bottom: 15px;
-            white-space: nowrap;
-            /* single line */
-            overflow: hidden;
-            /* hide overflow */
-            text-overflow: ellipsis;
-            /* show … if title too long */
-            width: 100%;
-            /* fit card width */
-            box-sizing: border-box;
-            /* padding counted inside width */
-        }
-
-        .resenje-card p {
-            font-size: 1em;
-            line-height: 1.4;
-        }
-
-        .coming-soon {
-            display: inline-block;
-            margin-top: 10px;
-            padding: 5px 10px;
-            font-size: 0.85em;
-            color: #fff;
-            background: #F58302;
-            border-radius: 6px;
-        }
-
-        /* Footer */
-        footer {
-            background: #ffffff;
-            color: #000;
-            text-align: center;
-            padding: 30px 20px;
-            margin-top: auto;
-            box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.05);
-        }
-
-        footer p {
-            margin-bottom: 10px;
-        }
-
-        footer a.social {
-            color: #666;
-            margin: 0 10px;
-            font-size: 1.2em;
-            transition: 0.3s;
-        }
-
-        footer a.social:hover {
-            color: #222;
-        }
-
-        @media(max-width:768px) {
-            .hero {
-                padding: 60px 15px;
-            }
-
-            .hero p {
-                font-size: 1.1em;
-            }
-
-            .resenje-card {
-                width: 90%;
-            }
-        }
-    </style>
+-->
 </head>
 
 <body>
-    <header>
-        <div class="container">
-            <img src="logo.png" alt="4PIT Logo">
-            <h1>4PIT</h1>
-            <p>Nudimo gotova softverska rešenja za jednostavan način poslovanja</p>
+    <!-- Navigation -->
+    <nav id="navbar">
+        <div class="nav-container">
+            <a href="#home" class="logo">4PIT</a>
+            <div class="menu-toggle" id="menuToggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#home" class="nav-link">Generalno</a></li>
+                <li><a href="#about" class="nav-link">O nama</a></li>
+                <li><a href="#services" class="nav-link">Servisi</a></li>
+                <li><a href="#contact" class="nav-link">Kontakt</a></li>
+            </ul>
         </div>
-    </header>
+    </nav>
 
-    <section class="resenja">
+    <!-- Section 1: Hero -->
+    <section id="home" class="hero">
+        <!-- Animated Objects (Reduced) -->
+        <div class="floating-objects">
+            <div class="floating-circle"></div>
+            <div class="floating-circle"></div>
+            <div class="floating-square"></div>
+            <div class="floating-line"></div>
+        </div>
+
+        <div class="hero-decoration"></div>
+        <div class="hero-content">
+            <h1>Razvijamo pouzdan softver koji pokreće vaše poslovanje</h1>
+            <p class="subtitle">Od koncepta do implementacije — kompletna softverska podrška</p>
+            <a href="#about" class="cta-button">Više</a>
+        </div>
+    </section>
+
+    <!-- Section 2: About - Mixed Layouts -->
+    <section id="about" class="about">
         <div class="container">
-            <h2>Naša rešenja</h2>
-            <div class="resenja-grid">
-                <div class="resenje-card">
-                    <h3>Elektronska Arhiva</h3>
-                    <p>Digitalizujte i organizujte sve vaše dokumente na jednom mestu, sigurno i brzo</p>
+            <!-- Introduction with large quote -->
+            <div class="about-intro fade-in">
+                <div class="quote-block">
+                    <span class="quote-mark">"</span>
+                    <h3>Naša kompanija razvija i nudi sopstvena softverska rešenja — Arhiva i Knjigovodstvo — ali i
+                        pruža usluge izrade prilagođenih softverskih sistema prema potrebama klijenata.</h3>
                 </div>
-                <div class="resenje-card">
-                    <h3>Finansijsko knjigovodstvo</h3>
-                    <p>Pojednostavite finansijsko praćenje, obračune i izveštaje uz maksimalnu preciznost</p>
+            </div>
+
+            <div class="black-line"></div>
+
+            <!-- Stats Section -->
+            <div class="stats-grid fade-in">
+                <div class="stat-item">
+                    <div class="stat-number">5+</div>
+                    <div class="stat-label">Projects Completed</div>
+                    <div class="stat-decoration"></div>
                 </div>
-                <div class="resenje-card">
-                    <h3>Robno knjigovodstvo</h3>
-                    <p>Upravljanje robom i skladištem u razvoju</p>
-                    <span class="coming-soon">Uskoro dostupno</span>
+                <div class="stat-item">
+                    <div class="stat-number">7+</div>
+                    <div class="stat-label">Godina iskustva</div>
+                    <div class="stat-decoration"></div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">∞</div>
+                    <div class="stat-label">Mogućnosti</div>
+                    <div class="stat-decoration"></div>
+                </div>
+            </div>
+
+            <!-- Philosophy Section with offset layout -->
+            <div class="philosophy-section fade-in">
+                <div class="philosophy-header">
+                    <h2>Filozofija</h2>
+                    <div class="header-decoration"></div>
+                </div>
+                <div class="philosophy-content">
+                    <div class="philosophy-main">
+                        <p class="lead-text">Pružamo jednostavna softverska rešenja koja u potpunosti pokrivaju potrebe
+                            arhiviranja vašeg dokumentacionog materijala.</p>
+                    </div>
+                    <div class="philosophy-points">
+                        <div class="point-item">
+                            <span class="point-number">01</span>
+                            <h4>Bezbedno</h4>
+                            <p>Sigurnost podataka je na prvom mestu</p>
+                        </div>
+                        <div class="point-item">
+                            <span class="point-number">02</span>
+                            <h4>Jednostavno</h4>
+                            <p>Intuitivan korisnički interfejs</p>
+                        </div>
+                        <div class="point-item">
+                            <span class="point-number">03</span>
+                            <h4>Brzo</h4>
+                            <p>Detaljni izveštaji u samo par klikova</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Process Timeline -->
+            <div class="process-timeline fade-in">
+                <h2 class="section-subtitle">Naš pristup</h2>
+                <div class="timeline-container">
+                    <div class="timeline-line"></div>
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content">
+                            <h4>Ideja</h4>
+                            <p>Razumevanje potreba za softverskim rešenjem</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content">
+                            <h4>Minimalizam</h4>
+                            <p>Definisanje najmanjeg skupa fukcionalnosti</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content">
+                            <h4>Revizija</h4>
+                            <p>Predlog potencijalnih izmenja i unapređenja</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content">
+                            <h4>Isporuka</h4>
+                            <p>Funkcionalni sofver prema konačnoj specifikaciji</p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
-    <footer>
+
+    <!-- Section 3: Services - Asymmetric Grid -->
+    <section id="services" class="services">
         <div class="container">
-            <h2>Kontakt</h2>
-            <br>
-            <p><strong>Email:</strong> jefimijana@gmail.com</p>
-            <p><strong>Telefon:</strong> +381 65/9517-319</p>
-            <br>
-
-            <br>
-            <div class="container">
-                <p>Ukoliko tražite tim za realizaciju neke ideje, <strong>otvoreni smo za saradnju i projekte</strong>
-                </p>
+            <div class="services-header fade-in">
+                <h2>Šta radimo</h2>
             </div>
-            <br>
-            <p>&copy; 2025 4PIT</p>
-        </div>
-    </footer>
 
+            <div class="asymmetric-grid fade-in">
+                <div class="service-large">
+                    <h3>Elektronska Arhiva</h3>
+                    <p>Za sve vaše dokumente — sigurno, pregledno i dostupno u svakom trenutku</p>
+                    <a href="#contact" class="service-tag">Više</a>
+                </div>
+                <div class="service-small">
+                    <div class="service-number">01</div>
+                    <h4>DokFin</h4>
+                </div>
+            </div>
+
+            <div class="asymmetric-grid reverse fade-in">
+                <div class="service-small">
+                    <div class="service-number">02</div>
+                    <h4>Promet sredstava i usluga</h4>
+                </div>
+                <div class="service-large">
+                    <h3>Finansijsko knjigovodstvo</h3>
+                    <p>Interno razvijen sistem koji automatizuje procese finansijskog praćenja, evidencije i
+                        izveštavanja</p>
+                    <a href="#contact" class="service-tag">Više</a>
+                </div>
+            </div>
+
+            <div class="asymmetric-grid fade-in">
+                <div class="service-large">
+                    <h3>Robno knjigovotstvo</h3>
+                    <p>Robno knjigovodstvo je sistem namenjen evidenciji robe, ulaza, izlaza i zaliha — uz potpunu
+                        kontrolu nad kretanjem robe i troškovima</p>
+                    <a href="#contact" class="service-tag">Više</a>
+                </div>
+                <div class="service-small">
+                    <div class="service-number">03</div>
+                    <h4>Promet roba i usluga</h4>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 4: Contact -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <div class="contact-grid fade-in">
+                <div class="contact-info">
+                    <h2>Kontakt</h2>
+                    <div class="info-item">
+                        <h4>Email</h4>
+                        <p>jefimijana@gmail.com</p>
+                    </div>
+                    <div class="info-item">
+                        <h4>Telefon</h4>
+                        <p>+381 65 95 17 319</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>© 2025 4PIT</p>
+    </footer>
+    <script src="tooplate-minimal-script.js"></script>
 </body>
 
 </html>
