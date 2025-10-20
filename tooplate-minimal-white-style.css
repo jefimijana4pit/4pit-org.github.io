@@ -1080,7 +1080,7 @@ https://www.tooplate.com/view/2141-minimal-white
             display: grid;
             grid-template-columns: 1fr 1px 1fr;
             /* gap: 80px; */
-            max-width: 1000px;
+            max-width: 100%;
             margin: 80px auto 0;
         }
 
@@ -1092,6 +1092,7 @@ https://www.tooplate.com/view/2141-minimal-white
 
         .contact-info {
             padding-right: 40px;
+            margin-left: 20px;
         }
 
         .contact-info h2 {
