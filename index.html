@@ -7,7 +7,12 @@
     <link rel="icon" type="image/png" href="assets/img/favicon.png">
 
     <title>4PIT</title>
-    <link href="tooplate-minimal-white-style.css" rel="stylesheet">
+    <link id="theme-css" href="tooplate-minimal-white-style.css" rel="stylesheet" data-theme="light">
+<style>
+.theme-toggle{background:none;border:2px solid currentColor;border-radius:999px;padding:6px 10px;cursor:pointer;font-size:14px;line-height:1}
+.theme-toggle:focus{outline:2px dashed currentColor;outline-offset:2px}
+@media (max-width: 768px){ .theme-toggle{position:fixed;right:16px;top:18px;z-index:1002} }
+</style>
     <!-- Primary Meta Tags -->
     <title>Elektronska arhiva, knjigovodstvo i materijalno poslovanje | 4PIT</title>
     <meta name="title" content="Elektronska arhiva, knjigovodstvo i materijalno poslovanje | 4PIT">
@@ -41,17 +46,19 @@ Free HTML CSS Template
     <!-- Navigation -->
     <nav id="navbar">
         <div class="nav-container">
+            
             <a href="#home" class="logo">4PIT</a>
             <div class="menu-toggle" id="menuToggle">
                 <span></span>
                 <span></span>
                 <span></span>
             </div>
-            <ul class="nav-links" id="navLinks">
+<ul class="nav-links" id="navLinks">
                 <li><a href="#home" class="nav-link">Generalno</a></li>
                 <li><a href="#about" class="nav-link">O nama</a></li>
                 <li><a href="#services" class="nav-link">Servisi</a></li>
                 <li><a href="#contact" class="nav-link">Kontakt</a></li>
+                <li><p id="themeToggle" class="nav-link"></p></li>
             </ul>
         </div>
     </nav>
@@ -242,7 +249,69 @@ Free HTML CSS Template
     <footer>
         <p>© 2025 4PIT</p>
     </footer>
-    <script src="tooplate-minimal-script.js"></script>
+    
+<script>
+(function () {
+  const THEME_KEY = 'theme';
+  const LIGHT = 'light', DARK = 'dark';
+  const CSS_ID = 'theme-css';
+  const LIGHT_HREF = 'tooplate-minimal-white-style.css';
+  const DARK_HREF  = 'tooplate-minimal-black-style.css';
+
+  function setTheme(theme) {
+    const link = document.getElementById(CSS_ID);
+    if (!link) return;
+    link.href = (theme === DARK) ? DARK_HREF : LIGHT_HREF;
+    document.documentElement.dataset.theme = theme;
+    localStorage.setItem(THEME_KEY, theme);
+    updateToggle(theme);
+    // Optional: update the browser toolbar color on mobile
+    const meta = document.querySelector('meta[name="theme-color"]');
+    if (meta) meta.setAttribute('content', theme === DARK ? '#000000' : '#ffffff');
+  }
+
+  function getPreferredTheme() {
+    const saved = localStorage.getItem(THEME_KEY);
+    if (saved === LIGHT || saved === DARK) return saved;
+    return window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? DARK : LIGHT;
+  }
+
+  function updateToggle(theme) {
+    const btn = document.getElementById('themeToggle');
+    if (!btn) return;
+    const dark = theme === DARK;
+    btn.setAttribute('aria-pressed', dark ? 'true' : 'false');
+    btn.title = dark ? 'Switch to light mode' : 'Switch to dark mode';
+    btn.textContent = dark ? '☾' : '☼';
+  }
+
+  // Initialize ASAP to avoid flash
+  document.addEventListener('DOMContentLoaded', function () {
+    const initial = getPreferredTheme();
+    setTheme(initial);
+
+    const btn = document.getElementById('themeToggle');
+    if (btn) {
+      btn.addEventListener('click', function () {
+        const current = (localStorage.getItem(THEME_KEY) || initial);
+        const next = current === DARK ? LIGHT : DARK;
+        setTheme(next);
+      });
+    }
+
+    // Keep in sync if system theme changes and user hasn't explicitly chosen
+    try {
+      const mql = window.matchMedia('(prefers-color-scheme: dark)');
+      mql.addEventListener('change', e => {
+        const saved = localStorage.getItem(THEME_KEY);
+        if (!saved) setTheme(e.matches ? DARK : LIGHT);
+      });
+    } catch (e) {}
+  });
+})();
+</script>
+
+<script src="tooplate-minimal-script.js"></script>
 </body>
 
 </html>
