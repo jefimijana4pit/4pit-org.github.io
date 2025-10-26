@@ -486,16 +486,17 @@ https://www.tooplate.com/view/2141-minimal-white
         /* Stats Grid */
         .stats-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 2px;
-            background: #000;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 16px; /* optional */
+            background: #fff;
             padding: 2px;
             margin-bottom: 100px;
         }
 
         .stat-item {
             background: #fff;
-            padding: 60px 20px;
+            border: 2px solid #000;
+            padding: 40px 20px;
             text-align: center;
             position: relative;
         }

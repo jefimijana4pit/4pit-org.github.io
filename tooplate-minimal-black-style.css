@@ -486,9 +486,9 @@ https://www.tooplate.com/view/2141-minimal-white
         /* Stats Grid */
         .stats-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 2px;
-            background: #fff;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 16px; /* optional */
+            background: #000;
             padding: 2px;
             margin-bottom: 100px;
         }
