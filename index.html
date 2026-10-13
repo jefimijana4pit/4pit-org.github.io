@@ -5,21 +5,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" type="image/png" href="assets/img/favicon.png">
+    <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
 
-    <title>4PIT</title>
-    <link id="theme-css" href="tooplate-minimal-white-style.css" rel="stylesheet" data-theme="light">
-<style>
-.theme-toggle{background:none;border:2px solid currentColor;border-radius:999px;padding:6px 10px;cursor:pointer;font-size:14px;line-height:1}
-.theme-toggle:focus{outline:2px dashed currentColor;outline-offset:2px}
-@media (max-width: 768px){ .theme-toggle{position:fixed;right:16px;top:18px;z-index:1002} }
-</style>
     <!-- Primary Meta Tags -->
-    <title>Elektronska arhiva, knjigovodstvo i materijalno poslovanje | 4PIT</title>
+    <title id="meta-title">Elektronska arhiva, knjigovodstvo i materijalno poslovanje | 4PIT</title>
     <meta name="title" content="Elektronska arhiva, knjigovodstvo i materijalno poslovanje | 4PIT">
     <meta name="description"
         content="Digitalizujte poslovanje uz 4PIT – rešenja za elektronsku arhivu, knjigovodstvo i materijalno poslovanje. Brzo, bezbedno i u skladu sa propisima.">
-
-    <!-- Keywords (optional, for regional SEO) -->
     <meta name="keywords"
         content="elektronska arhiva, knjigovodstvo, materijalno poslovanje, arhiviranje dokumenata, finansijsko knjigovodstvo, poslovni softver, digitalna arhiva, ERP rešenja, evidencija robe, fakturisanje, elektronski dokumenti">
 
@@ -30,65 +22,112 @@
     <meta property="og:description"
         content="Sve na jednom mestu – elektronska arhiva, knjigovodstvo i materijalno poslovanje. Automatizujte svoje poslovne procese sa 4PIT.">
     <meta property="og:image" content="https://4pit.rs/assets/preview.jpg">
+    <meta name="theme-color" content="#f8fafd">
 
-    <!--
+    <!-- Early zero-flicker Theme & Language Bootstrap -->
+    <style>
+        html[data-theme="dark"],
+        html[data-theme="dark"] body {
+            background-color: #0a0d14 !important;
+            color: #f0f4fc;
+        }
+        html[data-theme="light"],
+        html[data-theme="light"] body {
+            background-color: #f8fafd !important;
+            color: #0c101c;
+        }
+    </style>
+    <script>
+        (function () {
+            var THEME_KEY = 'theme';
+            var LANG_KEY = 'lang';
 
-Tooplate 2141 Minimal White
+            // Immediate language detection
+            var urlParams = new URLSearchParams(window.location.search);
+            var queryLang = urlParams.get('lang');
+            var savedLang = queryLang || localStorage.getItem(LANG_KEY) || 'sr';
+            if (savedLang !== 'en' && savedLang !== 'sr') savedLang = 'sr';
+            document.documentElement.lang = savedLang;
 
-https://www.tooplate.com/view/2141-minimal-white
+            // Immediate theme detection (eliminates reload / bookmark flicker)
+            var savedTheme = localStorage.getItem(THEME_KEY);
+            var prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+            var theme = (savedTheme === 'dark' || (!savedTheme && prefersDark)) ? 'dark' : 'light';
+            document.documentElement.setAttribute('data-theme', theme);
 
-Free HTML CSS Template
-
--->
+            var cssFile = theme === 'dark' ? 'tooplate-minimal-black-style.css' : 'tooplate-minimal-white-style.css';
+            document.write('<link id="theme-css" rel="stylesheet" href="' + cssFile + '" data-theme="' + theme + '">');
+        })();
+    </script>
+    <noscript>
+        <link id="theme-css" rel="stylesheet" href="tooplate-minimal-white-style.css" data-theme="light">
+    </noscript>
 </head>
 
 <body>
     <!-- Navigation -->
     <nav id="navbar">
         <div class="nav-container">
-            
-            <a href="#home" class="logo">4PIT</a>
-            <div class="menu-toggle" id="menuToggle">
-                <span></span>
-                <span></span>
-                <span></span>
+            <a href="#home" class="logo">
+                <img src="assets/img/logo.png" alt="4PIT Logo" class="logo-img">
+                <span class="logo-text">4PIT</span>
+            </a>
+
+            <div class="nav-right">
+                <ul class="nav-links" id="navLinks">
+                    <li><a href="#home" class="nav-link" data-i18n="nav.home">Generalno</a></li>
+                    <li><a href="#about" class="nav-link" data-i18n="nav.about">O nama</a></li>
+                    <li><a href="#services" class="nav-link" data-i18n="nav.services">Servisi</a></li>
+                    <li><a href="#contact" class="nav-link" data-i18n="nav.contact">Kontakt</a></li>
+                </ul>
+
+                <div class="nav-controls">
+                    <div class="lang-switcher" id="langSwitcher" role="group" aria-label="Language Selector">
+                        <button type="button" class="lang-btn active" id="langSr" data-lang="sr" title="Srpski jezik">SR</button>
+                        <span class="lang-sep">/</span>
+                        <button type="button" class="lang-btn" id="langEn" data-lang="en" title="English language">EN</button>
+                    </div>
+
+                    <button type="button" id="themeToggle" class="theme-toggle" aria-label="Toggle theme" title="Promeni temu">
+                        <span class="theme-icon">☼</span>
+                    </button>
+                </div>
+
+                <div class="menu-toggle" id="menuToggle" aria-label="Toggle navigation menu" role="button" tabindex="0">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
             </div>
-<ul class="nav-links" id="navLinks">
-                <li><a href="#home" class="nav-link">Generalno</a></li>
-                <li><a href="#about" class="nav-link">O nama</a></li>
-                <li><a href="#services" class="nav-link">Servisi</a></li>
-                <li><a href="#contact" class="nav-link">Kontakt</a></li>
-                <li><a id="themeToggle" class="nav-link"></a></li>
-            </ul>
         </div>
     </nav>
 
     <!-- Section 1: Hero -->
     <section id="home" class="hero">
-        <!-- Animated Objects (Reduced) -->
-        <div class="floating-objects">
+        <!-- Animated Objects -->
+        <div class="floating-objects" aria-hidden="true">
             <div class="floating-circle"></div>
             <div class="floating-circle"></div>
             <div class="floating-square"></div>
             <div class="floating-line"></div>
         </div>
 
-        <div class="hero-decoration"></div>
+        <div class="hero-decoration" aria-hidden="true"></div>
         <div class="hero-content">
-            <h1>Pouzdan softver koji pokreće vaše poslovanje</h1>
-            <p class="subtitle">Od koncepta do implementacije — kompletna softverska podrška</p>
-            <a href="#about" class="cta-button">Više</a>
+            <h1 data-i18n="hero.title">Pouzdan softver koji pokreće vaše poslovanje</h1>
+            <p class="subtitle" data-i18n="hero.subtitle">Od koncepta do implementacije — kompletna softverska podrška</p>
+            <a href="#about" class="cta-button" data-i18n="hero.cta">Više</a>
         </div>
     </section>
 
-    <!-- Section 2: About - Mixed Layouts -->
+    <!-- Section 2: About -->
     <section id="about" class="about">
         <div class="container">
             <!-- Introduction with large quote -->
             <div class="about-intro fade-in">
                 <div class="quote-block">
-                    <span class="quote-mark">"</span>
-                    <h3>Naša kompanija razvija i nudi sopstvena softverska rešenja, a pored toga
+                    <span class="quote-mark">“</span>
+                    <h3 data-i18n="about.quote">Naša kompanija razvija i nudi sopstvena softverska rešenja, a pored toga
                         pruža i usluge izrade softverskih sistema prema potrebama klijenata.</h3>
                 </div>
             </div>
@@ -99,43 +138,43 @@ Free HTML CSS Template
             <div class="stats-grid fade-in">
                 <div class="stat-item">
                     <div class="stat-number">5+</div>
-                    <div class="stat-label">Projekata</div>
+                    <div class="stat-label" data-i18n="about.statProjects">Projekata</div>
                 </div>
                 <div class="stat-item">
                     <div class="stat-number">7+</div>
-                    <div class="stat-label">Godina iskustva</div>
+                    <div class="stat-label" data-i18n="about.statExp">Godina iskustva</div>
                 </div>
                 <div class="stat-item">
                     <div class="stat-number">∞</div>
-                    <div class="stat-label">Mogućnosti</div>
+                    <div class="stat-label" data-i18n="about.statPoss">Mogućnosti</div>
                 </div>
             </div>
 
-            <!-- Philosophy Section with offset layout -->
+            <!-- Philosophy Section -->
             <div class="philosophy-section fade-in">
                 <div class="philosophy-header">
-                    <h2>Filozofija</h2>
+                    <h2 data-i18n="about.philosophyTitle">Filozofija</h2>
                     <div class="header-decoration"></div>
                 </div>
                 <div class="philosophy-content">
                     <div class="philosophy-main">
-                        <p class="lead-text">Pre implementacije rešenja vršimo detaljnu analizu poslovnih procesa kako bismo osigurali potpunu funkcionalnost i prilagođenost.</p>
+                        <p class="lead-text" data-i18n="about.philosophyLead">Pre implementacije rešenja vršimo detaljnu analizu poslovnih procesa kako bismo osigurali potpunu funkcionalnost i prilagođenost.</p>
                     </div>
                     <div class="philosophy-points">
                         <div class="point-item">
                             <span class="point-number">01</span>
-                            <h4>Bezbedno</h4>
-                            <p>Sigurnost podataka je na prvom mestu</p>
+                            <h4 data-i18n="about.point1Title">Bezbedno</h4>
+                            <p data-i18n="about.point1Desc">Sigurnost podataka je na prvom mestu</p>
                         </div>
                         <div class="point-item">
                             <span class="point-number">02</span>
-                            <h4>Jednostavno</h4>
-                            <p>Intuitivan korisnički interfejs</p>
+                            <h4 data-i18n="about.point2Title">Jednostavno</h4>
+                            <p data-i18n="about.point2Desc">Intuitivan korisnički interfejs</p>
                         </div>
                         <div class="point-item">
                             <span class="point-number">03</span>
-                            <h4>Precizno</h4>
-                            <p>Definisanje nophodnih funkcionalnosti</p>
+                            <h4 data-i18n="about.point3Title">Precizno</h4>
+                            <p data-i18n="about.point3Desc">Definisanje neophodnih funkcionalnosti</p>
                         </div>
                     </div>
                 </div>
@@ -143,35 +182,35 @@ Free HTML CSS Template
 
             <!-- Process Timeline -->
             <div class="process-timeline fade-in">
-                <h2 class="section-subtitle">Naš pristup</h2>
+                <h2 class="section-subtitle" data-i18n="about.processTitle">Naš pristup</h2>
                 <div class="timeline-container">
                     <div class="timeline-line"></div>
                     <div class="timeline-item">
                         <div class="timeline-dot"></div>
                         <div class="timeline-content">
-                            <h4>Ideja</h4>
-                            <p>Razumevanje potrebe za softverskim rešenjem</p>
+                            <h4 data-i18n="about.step1Title">Ideja</h4>
+                            <p data-i18n="about.step1Desc">Razumevanje potrebe za softverskim rešenjem</p>
                         </div>
                     </div>
                     <div class="timeline-item">
                         <div class="timeline-dot"></div>
                         <div class="timeline-content">
-                            <h4>Specifikacija</h4>
-                            <p>Definisanje najmanjeg skupa fukcionalnosti</p>
+                            <h4 data-i18n="about.step2Title">Specifikacija</h4>
+                            <p data-i18n="about.step2Desc">Definisanje najmanjeg skupa funkcionalnosti</p>
                         </div>
                     </div>
                     <div class="timeline-item">
                         <div class="timeline-dot"></div>
                         <div class="timeline-content">
-                            <h4>Revizija</h4>
-                            <p>Predlog potencijalnih izmenja i unapređenja</p>
+                            <h4 data-i18n="about.step3Title">Revizija</h4>
+                            <p data-i18n="about.step3Desc">Predlog potencijalnih izmena i unapređenja</p>
                         </div>
                     </div>
                     <div class="timeline-item">
                         <div class="timeline-dot"></div>
                         <div class="timeline-content">
-                            <h4>Isporuka</h4>
-                            <p>Funkcionalni sofver prema konačnoj specifikaciji</p>
+                            <h4 data-i18n="about.step4Title">Isporuka</h4>
+                            <p data-i18n="about.step4Desc">Funkcionalni softver prema konačnoj specifikaciji</p>
                         </div>
                     </div>
                 </div>
@@ -179,45 +218,45 @@ Free HTML CSS Template
         </div>
     </section>
 
-    <!-- Section 3: Services - Asymmetric Grid -->
+    <!-- Section 3: Services -->
     <section id="services" class="services">
         <div class="container">
             <div class="services-header fade-in">
-                <h2>Naša rešenja</h2>
+                <h2 data-i18n="services.title">Naša rešenja</h2>
             </div>
 
             <div class="asymmetric-grid fade-in">
                 <div class="service-large">
-                    <h3>Elektronska Arhiva</h3>
-                    <p>Za sve vaše dokumente — sigurno, pregledno i dostupno u svakom trenutku</p>
+                    <h3 data-i18n="services.service1Title">Elektronska Arhiva</h3>
+                    <p data-i18n="services.service1Desc">Za sve vaše dokumente — sigurno, pregledno i dostupno u svakom trenutku</p>
                 </div>
                 <div class="service-small">
                     <div class="service-number">01</div>
-                    <h4>DokFin</h4>
+                    <h4 data-i18n="services.service1Tag">DokFin</h4>
                 </div>
             </div>
 
             <div class="asymmetric-grid reverse fade-in">
                 <div class="service-small">
                     <div class="service-number">02</div>
-                    <h4>Promet sredstava i usluga</h4>
+                    <h4 data-i18n="services.service2Tag">Promet sredstava i usluga</h4>
                 </div>
                 <div class="service-large">
-                    <h3>Finansijsko knjigovodstvo</h3>
-                    <p>Interno razvijen sistem koji automatizuje procese finansijskog praćenja, evidencije i
+                    <h3 data-i18n="services.service2Title">Finansijsko knjigovodstvo</h3>
+                    <p data-i18n="services.service2Desc">Interno razvijen sistem koji automatizuje procese finansijskog praćenja, evidencije i
                         izveštavanja</p>
                 </div>
             </div>
 
             <div class="asymmetric-grid fade-in">
                 <div class="service-large">
-                    <h3>Robno knjigovotstvo</h3>
-                    <p>Robno knjigovodstvo je sistem namenjen evidenciji robe, ulaza, izlaza i zaliha — uz potpunu
+                    <h3 data-i18n="services.service3Title">Robno knjigovodstvo</h3>
+                    <p data-i18n="services.service3Desc">Robno knjigovodstvo je sistem namenjen evidenciji robe, ulaza, izlaza i zaliha — uz potpunu
                         kontrolu nad kretanjem robe i troškovima</p>
                 </div>
                 <div class="service-small">
                     <div class="service-number">03</div>
-                    <h4>Promet roba i usluga</h4>
+                    <h4 data-i18n="services.service3Tag">Promet roba i usluga</h4>
                 </div>
             </div>
         </div>
@@ -228,14 +267,16 @@ Free HTML CSS Template
         <div class="container">
             <div class="contact-grid fade-in">
                 <div class="contact-info">
-                    <h2>Kontakt</h2>
-                    <div class="info-item">
-                        <h4>Email</h4>
-                        <p>jefimijana@gmail.com</p>
-                    </div>
-                    <div class="info-item">
-                        <h4>Telefon</h4>
-                        <p>+381 65 95 17 319</p>
+                    <h2 data-i18n="contact.title">Kontakt</h2>
+                    <div class="contact-cards">
+                        <div class="info-item">
+                            <h4 data-i18n="contact.emailLabel">Email</h4>
+                            <p><a href="mailto:jefimijana@gmail.com" class="contact-link">jefimijana@gmail.com</a></p>
+                        </div>
+                        <div class="info-item">
+                            <h4 data-i18n="contact.phoneLabel">Telefon</h4>
+                            <p><a href="tel:+381659517319" class="contact-link">+381 65 95 17 319</a></p>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -244,71 +285,11 @@ Free HTML CSS Template
 
     <!-- Footer -->
     <footer>
-        <p>© 2025 4PIT</p>
+        <p data-i18n="footer.copyright">© 2025 4PIT. Sva prava zadržana.</p>
     </footer>
-    
-<script>
-(function () {
-  const THEME_KEY = 'theme';
-  const LIGHT = 'light', DARK = 'dark';
-  const CSS_ID = 'theme-css';
-  const LIGHT_HREF = 'tooplate-minimal-white-style.css';
-  const DARK_HREF  = 'tooplate-minimal-black-style.css';
 
-  function setTheme(theme) {
-    const link = document.getElementById(CSS_ID);
-    if (!link) return;
-    link.href = (theme === DARK) ? DARK_HREF : LIGHT_HREF;
-    document.documentElement.dataset.theme = theme;
-    localStorage.setItem(THEME_KEY, theme);
-    updateToggle(theme);
-    // Optional: update the browser toolbar color on mobile
-    const meta = document.querySelector('meta[name="theme-color"]');
-    if (meta) meta.setAttribute('content', theme === DARK ? '#000000' : '#ffffff');
-  }
-
-  function getPreferredTheme() {
-    const saved = localStorage.getItem(THEME_KEY);
-    if (saved === LIGHT || saved === DARK) return saved;
-    return window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? DARK : LIGHT;
-  }
-
-  function updateToggle(theme) {
-    const btn = document.getElementById('themeToggle');
-    if (!btn) return;
-    const dark = theme === DARK;
-    btn.setAttribute('aria-pressed', dark ? 'true' : 'false');
-    btn.title = dark ? 'Switch to light mode' : 'Switch to dark mode';
-    btn.textContent = dark ? '☾' : '☼';
-  }
-
-  // Initialize ASAP to avoid flash
-  document.addEventListener('DOMContentLoaded', function () {
-    const initial = getPreferredTheme();
-    setTheme(initial);
-
-    const btn = document.getElementById('themeToggle');
-    if (btn) {
-      btn.addEventListener('click', function () {
-        const current = (localStorage.getItem(THEME_KEY) || initial);
-        const next = current === DARK ? LIGHT : DARK;
-        setTheme(next);
-      });
-    }
-
-    // Keep in sync if system theme changes and user hasn't explicitly chosen
-    try {
-      const mql = window.matchMedia('(prefers-color-scheme: dark)');
-      mql.addEventListener('change', e => {
-        const saved = localStorage.getItem(THEME_KEY);
-        if (!saved) setTheme(e.matches ? DARK : LIGHT);
-      });
-    } catch (e) {}
-  });
-})();
-</script>
-
-<script src="tooplate-minimal-script.js"></script>
+    <!-- Main JavaScript -->
+    <script src="tooplate-minimal-script.js"></script>
 </body>
 
 </html>
