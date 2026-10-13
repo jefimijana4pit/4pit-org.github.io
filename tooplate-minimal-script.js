@@ -76,8 +76,14 @@
             },
             contact: {
                 title: "Kontakt",
+                ownerRole: "Osnivač & Glavni Inženjer",
+                ownerName: "Jefimija Petković",
+                ownerDegree: "Master inženjer elektrotehnike i računarstva",
+                ownerUni: "Univerzitet u Nišu",
+                ownerSummary: "Master inženjer sa Univerziteta u Nišu, sa ekspertizom u razvoju pouzdanih softverskih sistema, elektronskih arhiva i poslovnih informacionih rešenja.",
                 emailLabel: "Email",
-                phoneLabel: "Telefon"
+                phoneLabel: "Telefon",
+                linkedinLabel: "LinkedIn"
             },
             footer: {
                 copyright: "© 2025 4PIT. Sva prava zadržana."
@@ -143,8 +149,14 @@
             },
             contact: {
                 title: "Contact",
+                ownerRole: "Founder & Lead Engineer",
+                ownerName: "Jefimija Petković",
+                ownerDegree: "Master Engineer in Computer Science & Electrical Engineering",
+                ownerUni: "University of Niš",
+                ownerSummary: "Master Engineer graduated from the University of Niš, dedicated to engineering robust, secure, and modern software architectures, electronic archiving systems, and business solutions.",
                 emailLabel: "Email",
-                phoneLabel: "Phone"
+                phoneLabel: "Phone",
+                linkedinLabel: "LinkedIn"
             },
             footer: {
                 copyright: "© 2025 4PIT. All rights reserved."
